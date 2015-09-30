@@ -270,8 +270,8 @@ def getStreamUrl(id):
         return ""
     
     else:
-        get_json_code = re.compile(r'dmp\.create\(document\.getElementById\(\'player\'\),\s*([^);]+)').findall(content)[0]
-        # print get_json_code
+        get_json_code = re.compile(r'dmp\.create\(document\.getElementById\(\'player\'\),\s*([^;]+)').findall(content)[0]
+        get_json_code = get_json_code[:len(get_json_code)-1]
         
         cc= json.loads(get_json_code)['metadata']['qualities']  #['380'][0]['url']
         print cc
